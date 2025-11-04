@@ -3,7 +3,7 @@ import { Publication, Project, Resume } from './types';
 export const RESUME_DATA: Resume = {
   contact: {
     name: "Brandon Doey",
-    title: "Senior Data Scientist | ML Engineer | Independent Researcher",
+    title: "Data & ML Engineer & Researcher",
     location: "Orlando, FL",
     phone: "561.459.7801",
     email: "brandon.doey@icloud.com",

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Publication } from '../types';
 import { LinkIcon } from './icons';
 
@@ -9,10 +8,7 @@ interface PublicationCardProps {
 
 export const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
   return (
-    <motion.div 
-      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-      className="p-6 rounded-lg bg-slate-900/70 ring-1 ring-slate-700 hover:ring-teal-400/80 transition-shadow shadow-lg hover:shadow-teal-400/10"
-    >
+    <div className="p-6 rounded-lg bg-slate-900/70 ring-1 ring-slate-700 hover:ring-teal-400 transition-all">
         <h3 className="font-bold text-slate-200 text-lg leading-tight">
           {publication.title}
         </h3>
@@ -36,6 +32,6 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({ publication })
                 <span>DOI: {publication.doi}</span>
             </a>
         </div>
-    </motion.div>
+    </div>
   );
 };

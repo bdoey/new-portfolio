@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Resume } from '../types';
 import { GithubIcon, LinkedInIcon, FacebookIcon, TwitterIcon } from './icons';
 
@@ -16,20 +15,12 @@ const socialLinks = [
 
 export const Header: React.FC<HeaderProps> = ({ resume }) => {
     return (
-        <motion.header 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center md:text-left"
-        >
+        <header className="text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center gap-8">
-                <motion.img 
+                <img 
                     src="https://picsum.photos/seed/avatar/128/128" 
                     alt="Brandon Doey" 
                     className="rounded-full h-32 w-32 ring-2 ring-slate-600"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
                 />
                 <div>
                     <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-200">
@@ -42,23 +33,17 @@ export const Header: React.FC<HeaderProps> = ({ resume }) => {
                         {resume.summary}
                     </p>
                     <ul className="mt-6 flex items-center justify-center md:justify-start gap-4" aria-label="Social media">
-                        {socialLinks.map((link, i) => (
-                             <motion.li 
-                                key={link.name} 
-                                className="shrink-0"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 + i * 0.1 }}
-                            >
+                        {socialLinks.map(link => (
+                             <li key={link.name} className="shrink-0">
                                 <a className="block text-slate-400 hover:text-teal-300 transition" href={link.href} target="_blank" rel="noreferrer noopener" aria-label={link.name}>
                                     <span className="sr-only">{link.name}</span>
                                     <link.icon className="h-6 w-6" />
                                 </a>
-                            </motion.li>
+                            </li>
                         ))}
                     </ul>
                 </div>
             </div>
-        </motion.header>
+        </header>
     );
 };

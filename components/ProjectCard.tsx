@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Project } from '../types';
 import { LinkIcon } from './icons';
 
@@ -9,12 +8,11 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <motion.a 
+    <a 
         href={project.link}
         target="_blank"
         rel="noreferrer noopener"
-        className="block p-6 rounded-lg bg-slate-900/70 ring-1 ring-slate-700 transition-all group h-full shadow-lg hover:shadow-teal-400/10 hover:ring-teal-400/80"
-        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        className="block p-6 rounded-lg bg-slate-900/70 ring-1 ring-slate-700 hover:ring-teal-400 transition-all group h-full"
     >
         <img
             alt={`${project.title} screenshot`}
@@ -33,6 +31,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <span>View Project</span>
             </div>
         </div>
-    </motion.a>
+    </a>
   );
 };
